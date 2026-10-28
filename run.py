@@ -3,6 +3,7 @@
     python run.py data    # fetch ~10K recent cs.LG abstracts from the arXiv API
     python run.py index   # chunk + embed abstracts into artifacts/
     python run.py eval    # known-item evaluation of 4 retrievers -> reports/
+    python run.py significance  # paired bootstrap CIs from saved per-query ranks
     python run.py test    # lint + unit tests
     python run.py app     # launch the Streamlit demo
     python run.py all     # data + index + eval
@@ -33,6 +34,10 @@ def main(cmd: str) -> int:
         from paperqa.evaluate import run_evaluation
 
         run_evaluation()
+    if cmd in ("eval", "all", "significance"):
+        from paperqa.significance import run as significance
+
+        significance()
     if cmd == "test":
         lint = subprocess.call([sys.executable, "-m", "ruff", "check", "."], cwd=ROOT)
         return lint or subprocess.call([sys.executable, "-m", "pytest", "-q"], cwd=ROOT)
@@ -41,7 +46,7 @@ def main(cmd: str) -> int:
             [sys.executable, "-m", "streamlit", "run", str(ROOT / "app" / "streamlit_app.py")],
             cwd=ROOT,
         )
-    if cmd not in ("data", "index", "eval", "all"):
+    if cmd not in ("data", "index", "eval", "all", "significance"):
         print(__doc__)
         return 1
     return 0

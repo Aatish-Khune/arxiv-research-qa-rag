@@ -20,7 +20,7 @@ from paperqa.config import REPORTS_DIR  # noqa: E402
 from paperqa.index import load_papers, load_retrievers  # noqa: E402
 
 METHODS = {
-    "hybrid_rerank": "Hybrid + cross-encoder rerank (best)",
+    "hybrid_rerank": "Hybrid + cross-encoder rerank (most accurate, slower)",
     "hybrid_rrf": "Hybrid (BM25 + dense, RRF)",
     "dense": "Dense embeddings (MiniLM + FAISS)",
     "bm25": "BM25 keyword search (baseline)",
