@@ -1,0 +1,29 @@
+# Raw API responses are re-downloadable (artifacts/ with the cleaned CC0 corpus IS committed)
+data/
+
+# Downloaded Hugging Face models (re-downloaded automatically)
+.hf_cache/
+
+# Experiment tracking
+mlflow.db
+mlruns/
+*.log
+
+# Private interview prep
+INTERVIEW_NOTES.md
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
