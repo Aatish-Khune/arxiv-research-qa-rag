@@ -4,7 +4,8 @@
 cited sentences from 10,000 arXiv abstracts. Four retrieval methods were measured on 500 queries
 to find out which one actually works best.**
 
-> **Live demo:** _coming soon (Streamlit Community Cloud)_ · Run it locally: `python run.py app`
+> **Live demo:** https://arxiv-ml-research.streamlit.app (free tier: if it's asleep, click
+> "wake up"; the first question takes ~1 min while models load) · Run it locally: `python run.py app`
 
 ## Results at a glance
 
